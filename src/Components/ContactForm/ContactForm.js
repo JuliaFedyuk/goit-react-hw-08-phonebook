@@ -45,7 +45,7 @@ class ContactForm extends Component {
         <label className="input_label">
           Name
           <input
-            className="form_input"
+            className="contactform_input"
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -58,7 +58,7 @@ class ContactForm extends Component {
         <label className="input_label">
           Number
           <input
-            className="form_input"
+            className="contactform_input"
             type="tel"
             name="number"
             pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"

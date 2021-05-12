@@ -1,0 +1,8 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavLink:first-child {
+  margin-right: 30px;
+}

@@ -1,5 +1,7 @@
-// import { connect } from 'react-redux';
 import { Component } from 'react';
+import { connect } from 'react-redux';
+import { authOperations } from '../redux/auth';
+import '../styles/pages.scss';
 
 class LoginPage extends Component {
   state = {
@@ -21,13 +23,18 @@ class LoginPage extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div>
-        <h1>Login Page</h1>
+      <div className="loginWrapper">
+        <h1 className="page-title">Login Page</h1>
 
-        <form onSubmit={this.handleSubmit} autoComplete="off">
-          <label>
+        <form
+          className="loginForm"
+          onSubmit={this.handleSubmit}
+          autoComplete="off"
+        >
+          <label className="input_label">
             Mail
             <input
+              className="form_input"
               type="email"
               name="email"
               value={email}
@@ -35,9 +42,10 @@ class LoginPage extends Component {
             />
           </label>
 
-          <label>
+          <label className="input_label">
             Password
             <input
+              className="form_input"
               type="password"
               name="password"
               value={password}
@@ -45,11 +53,17 @@ class LoginPage extends Component {
             />
           </label>
 
-          <button type="submit">Log in</button>
+          <button className="button" type="submit">
+            Log in
+          </button>
         </form>
       </div>
     );
   }
 }
 
-export default LoginPage;
+const mapDispatchToProps = {
+  onLogin: authOperations.logIn,
+};
+
+export default connect(null, mapDispatchToProps)(LoginPage);

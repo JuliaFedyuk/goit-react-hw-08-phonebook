@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
+import { connect } from 'react-redux';
+import { authSelectors } from '../../redux/auth';
+import './Navigation.scss';
 
-const Navigation = () => {
+const Navigation = ({ isAuthenticated }) => {
   return (
-    <nav>
+    <nav className="navigation">
       <NavLink
         exact
         to={routes.home}
@@ -12,15 +15,22 @@ const Navigation = () => {
       >
         Home
       </NavLink>
-      <NavLink
-        to={routes.contacts}
-        className="NavLink"
-        activeClassName="NavLink--active"
-      >
-        Contacts
-      </NavLink>
+
+      {isAuthenticated && (
+        <NavLink
+          to={routes.contacts}
+          className="NavLink"
+          activeClassName="NavLink--active"
+        >
+          Contacts
+        </NavLink>
+      )}
     </nav>
   );
 };
 
-export default Navigation;
+const mapStateToProps = state => ({
+  isAuthenticated: authSelectors.getIsAuthenticated(state),
+});
+
+export default connect(mapStateToProps)(Navigation);

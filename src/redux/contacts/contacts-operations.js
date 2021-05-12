@@ -11,15 +11,15 @@ import {
   deleteContactError,
 } from './contacts-actions';
 
-axios.defaults.baseURL = 'http://localhost:3001';
-
-const fetchContacts = () => dispatch => {
+const fetchContacts = () => async dispatch => {
   dispatch(fetchContactRequest());
 
-  axios
-    .get('/contacts')
-    .then(({ data }) => dispatch(fetchContactSuccess(data)))
-    .catch(error => dispatch(fetchContactError(error.message)));
+  try {
+    const { data } = await axios.get('/contacts');
+    dispatch(fetchContactSuccess(data));
+  } catch (error) {
+    dispatch(fetchContactError(error.message));
+  }
 };
 
 const addContact = ({ name, number }) => dispatch => {

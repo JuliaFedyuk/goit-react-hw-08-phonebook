@@ -1,6 +1,6 @@
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import { contactsOperations, contactsSelectors } from '../../redux/contacts';
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ContactList.scss';
 
@@ -11,7 +11,6 @@ class ContactList extends Component {
 
   render() {
     const contacts = this.props.contacts;
-    console.log(this.props);
 
     return (
       <>

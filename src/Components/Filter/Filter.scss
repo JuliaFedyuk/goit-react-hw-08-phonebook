@@ -1,3 +1,7 @@
+.filterWrapper {
+  padding-top: 50px;
+}
+
 .filter_input {
   margin-left: 10px;
   font-size: 18px;
@@ -5,6 +9,8 @@
   outline: none;
   border: none;
   transition: 0.3s;
+  height: 25px;
+  width: 300px;
 }
 
 .filter_input:focus,
@@ -14,6 +20,8 @@
 }
 
 .filter_label {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
+  color: brown;
+  margin-top: 150px;
 }

@@ -1,0 +1,66 @@
+.button {
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 7px;
+  transition: 0.3s;
+  background-color: teal;
+  width: auto;
+  font-weight: 600;
+  color: yellow;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: white;
+}
+
+.logoutButton:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: white;
+}
+
+.loginForm {
+  text-align: center;
+}
+
+.form_input {
+  font-size: 18px;
+  margin-left: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+  width: 250px;
+  margin-right: 25px;
+  height: 25px;
+}
+
+.input_label {
+  padding: 5px 0px;
+  color: brown;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.form_input:focus,
+.form_input:hover {
+  box-shadow: 0 0 0 3px teal;
+  transition: 0.3s;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 46px;
+  color: brown;
+}
+
+.registerWrapper {
+  padding-top: 40px;
+}
+
+.loginWrapper {
+  padding-top: 40px;
+}

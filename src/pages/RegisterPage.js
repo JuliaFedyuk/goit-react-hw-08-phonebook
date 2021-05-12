@@ -1,4 +1,7 @@
 import { Component } from 'react';
+import { connect } from 'react-redux';
+import { authOperations } from '../redux/auth';
+import '../styles/pages.scss';
 
 class RegisterPage extends Component {
   state = {
@@ -23,13 +26,14 @@ class RegisterPage extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div>
-        <h1>Registration page</h1>
+      <div className="registerWrapper">
+        <h1 className="page-title">Registration page</h1>
 
         <form onSubmit={this.handleSubmit} autoComplete="off">
-          <label>
+          <label className="input_label">
             Name
             <input
+              className="form_input"
               type="text"
               name="name"
               value={name}
@@ -37,9 +41,10 @@ class RegisterPage extends Component {
             />
           </label>
 
-          <label>
+          <label className="input_label">
             Mail
             <input
+              className="form_input"
               type="email"
               name="email"
               value={email}
@@ -47,9 +52,10 @@ class RegisterPage extends Component {
             />
           </label>
 
-          <label>
+          <label className="input_label">
             Password
             <input
+              className="form_input"
               type="password"
               name="password"
               value={password}
@@ -57,11 +63,17 @@ class RegisterPage extends Component {
             />
           </label>
 
-          <button type="submit">Register</button>
+          <button className="button" type="submit">
+            Register
+          </button>
         </form>
       </div>
     );
   }
 }
 
-export default RegisterPage;
+const mapStateToProps = {
+  onRegister: authOperations.register,
+};
+
+export default connect(null, mapStateToProps)(RegisterPage);

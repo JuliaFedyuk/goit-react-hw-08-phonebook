@@ -5,15 +5,17 @@ import { contactsSelectors, changeFilter } from '../../redux/contacts';
 import './Filter.scss';
 
 const Filter = ({ value, onChange }) => (
-  <label className="filter_label">
-    Find contacts by name
-    <input
-      className="filter_input"
-      type="text"
-      value={value}
-      onChange={onChange}
-    ></input>
-  </label>
+  <div className="filterWrapper">
+    <label className="filter_label">
+      Find contacts by name
+      <input
+        className="filter_input"
+        type="text"
+        value={value}
+        onChange={onChange}
+      ></input>
+    </label>
+  </div>
 );
 
 Filter.propTypes = {
