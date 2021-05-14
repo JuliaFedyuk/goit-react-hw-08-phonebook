@@ -38,7 +38,13 @@ const loading = createReducer(false, {
   [fetchContactError]: () => false,
 });
 
-const error = createReducer(null, {});
+const setError = (_, { payload }) => payload;
+
+const error = createReducer(null, {
+  [addContactError]: setError,
+  [deleteContactError]: setError,
+  [fetchContactError]: setError,
+});
 
 export default combineReducers({
   items,
